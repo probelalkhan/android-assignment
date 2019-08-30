@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:background="@color/colorPrimaryDark"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".ui.quotes.QuoteFragment">
+
+
+    <RelativeLayout
+            android:layout_margin="32dp"
+            android:background="@drawable/bg_gradient_quote"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:layout_centerInParent="true"
+                android:textColor="@color/colorWhiteText"
+                android:textAlignment="center"
+                tools:text="Press forward. Do not stop, do not linger in your journey, but strive for the mark set before you."
+                android:id="@+id/text_view_quote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cocogoose_pro"
+                android:textSize="28sp"/>
+
+        <TextView
+                android:fontFamily="@font/cocogoose_pro_light"
+                android:textColor="@color/colorLightText"
+                android:textSize="14sp"
+                android:id="@+id/text_view_author"
+                tools:text="- George WhiteField"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/text_view_quote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+
+    </RelativeLayout>
+
+</FrameLayout>

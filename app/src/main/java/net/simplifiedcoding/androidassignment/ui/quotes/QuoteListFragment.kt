@@ -17,11 +17,12 @@ import net.simplifiedcoding.androidassignment.data.db.entities.Quote
 import net.simplifiedcoding.mvvmsampleapp.util.Coroutines
 import net.simplifiedcoding.mvvmsampleapp.util.hide
 import net.simplifiedcoding.mvvmsampleapp.util.show
+import net.simplifiedcoding.mvvmsampleapp.util.toast
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
 import org.kodein.di.generic.instance
 
-class QuotesFragment : Fragment(), KodeinAware {
+class QuoteListFragment : Fragment(), KodeinAware {
 
     override val kodein by kodein()
 
@@ -52,11 +53,9 @@ class QuotesFragment : Fragment(), KodeinAware {
     }
 
     private fun initRecyclerView(quoteItem: List<QuoteItem>) {
-
         val mAdapter = GroupAdapter<ViewHolder>().apply {
             addAll(quoteItem)
         }
-
         recyclerview.apply {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
@@ -66,10 +65,9 @@ class QuotesFragment : Fragment(), KodeinAware {
     }
 
 
-    private fun List<Quote>.toQuoteItem() : List<QuoteItem>{
+    private fun List<Quote>.toQuoteItem(): List<QuoteItem> {
         return this.map {
             QuoteItem(it)
         }
     }
-
 }

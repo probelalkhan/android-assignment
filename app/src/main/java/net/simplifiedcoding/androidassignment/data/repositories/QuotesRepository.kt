@@ -9,6 +9,7 @@ import net.simplifiedcoding.androidassignment.data.db.entities.Quote
 import net.simplifiedcoding.androidassignment.data.network.MyApi
 import net.simplifiedcoding.androidassignment.data.network.SafeApiRequest
 import net.simplifiedcoding.mvvmsampleapp.util.Coroutines
+import java.lang.Exception
 
 
 class QuotesRepository(
@@ -32,8 +33,10 @@ class QuotesRepository(
     }
 
     private suspend fun fetchQuotes() {
-        val response = apiRequest { api.getQuotes() }
-        quotes.postValue(response.quotes)
+        try {
+            val response = apiRequest { api.getQuotes() }
+            quotes.postValue(response.quotes)
+        } catch (e: Exception) { e.printStackTrace()}
     }
 
 
